@@ -1,0 +1,5 @@
+
+{
+  "connectionString": "mongodb+srv://satyendrakumar:mWhQIjkl97hqexXA@cluster10.nsmodum.mongodb.net/notes-app?retryWrites=true&w=majority"
+  
+}
