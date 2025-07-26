@@ -27,9 +27,12 @@ app.use(cors({ origin: "https://notesweb-frontend.onrender.com" }));
 
 // Routes
 app.get("/", (req, res) => {
-  res.json([{id: 1, title:"First Note" ,content:"Hello from backend" },{id:2,title:"Second Note" ,content:"Another"}]);
+  res.json({ data: "hello" });
 });
+
 app.get("/api/notes", (req, res) => {
+  res.json([{id: 1, title:"First Note" ,content:"Hello from backend" },{id:2,title:"Second Note" ,content:"Another Note"}]);
+});
 
 // Register
 app.post("/create-account", async (req, res) => {
