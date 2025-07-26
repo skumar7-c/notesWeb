@@ -26,9 +26,10 @@ app.use(express.json());
 app.use(cors({ origin: "https://notesweb-frontend.onrender.com" }));
 
 // Routes
-app.get("/api/notes", (req, res) => {
-  res.json({ data: "hello" });
+app.get("/", (req, res) => {
+  res.json([{id: 1, title:"First Note" ,content:"Hello from backend" },{id:2,title:"Second Note" ,content:"Another"}]);
 });
+app.get("/api/notes", (req, res) => {
 
 // Register
 app.post("/create-account", async (req, res) => {
