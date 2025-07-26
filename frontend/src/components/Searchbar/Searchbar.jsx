@@ -4,25 +4,26 @@ import { IoMdClose } from "react-icons/io";
 
 const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
   return (
-    <div className="w-80 flex items-center px-4 bg-slate-100 rounded-md">
+    <div className="flex items-center w-full max-w-md bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 transition">
+      <FaSearch className="text-gray-400 mr-2" onClick={handleSearch} />
+
       <input
         type="text"
-        placeholder="Search Notes"
-        className="w-full text-xs bg-transparent py-[11px] outline-none"
+        placeholder="Search notes by title or tag..."
+        className="flex-grow bg-transparent text-sm outline-none"
         value={value}
         onChange={onChange}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') handleSearch();
+        }}
       />
 
       {value && (
         <IoMdClose
-          className="text-xl text-slate-500 cursor-pointer"
+          className="text-gray-400 hover:text-black cursor-pointer text-lg ml-2"
           onClick={onClearSearch}
         />
       )}
-<FaSearch
-  className="text-slate-400 cursor-pointer hover:text-black"
-  onClick={handleSearch}
-/> 
     </div>
   );
 };
