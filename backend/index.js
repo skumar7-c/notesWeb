@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cors({ origin: "https://notesweb-frontend.onrender.com" }));
 
 // Routes
-app.get("/", (req, res) => {
+app.get("/api/notes", (req, res) => {
   res.json({ data: "hello" });
 });
 
