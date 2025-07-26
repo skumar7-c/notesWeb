@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "https://notesweb-i2io.onrender.com" }));
+app.use(cors({ origin: "https://notesweb-frontend.onrender.com" }));
 
 // Routes
 app.get("/", (req, res) => {
